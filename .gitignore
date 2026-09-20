@@ -1,0 +1,30 @@
+# Binaries
+/bin/
+/build/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test and coverage artifacts
+*.test
+*.out
+coverage.*
+
+# Go workspace
+go.work
+go.work.sum
+
+# Environment / local secrets
+.env
+.env.local
+*.local.yaml
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
