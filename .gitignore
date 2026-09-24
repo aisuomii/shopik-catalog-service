@@ -28,3 +28,6 @@ go.work.sum
 # OS
 .DS_Store
 Thumbs.db
+
+# Local k8s secret filled from the example template
+k8s-deployment/secret.yaml

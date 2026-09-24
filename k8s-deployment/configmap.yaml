@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: catalog-service-config
+data:
+  # Mounted into the pod as /etc/catalog-service/config.yaml.
+  # Never put the database password here: ConfigMaps are stored unencrypted and
+  # are readable by anyone with "get configmaps" in this namespace.
+  config.yaml: |
+    app:
+      env: production
+      shutdown_timeout: 10s
+
+    postgres:
+      host: postgres.default.svc.cluster.local
+      port: 5432
+      user: catalog
+      database: catalog
+      ssl_mode: require
+      max_open_conns: 25
+      max_idle_conns: 25
+      conn_max_lifetime: 30m
+      conn_max_idle_time: 5m
